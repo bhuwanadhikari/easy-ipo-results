@@ -286,99 +286,97 @@
             </div>
         </div>
     </div>
+</body>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script>
+    //define constants here
+    const serverURL = "";
+    //get all the boids and names
+    const nameInputs = [...$('.name-input')];
+    const boidInputs = [...$('.boid-input')];
+    const resultScreens = [...document.getElementsByClassName('result-screen')];
+    // console.log(resultScreens);
+    if (localStorage.getItem("personsArray")) {
+        // console.log(JSON.parse(localStorage.getItem("personsArray")));
+        const savedPersonsArray = JSON.parse(localStorage.getItem("personsArray"))
+        savedPersonsArray.forEach((person, i) => {
+            nameInputs[i].value = person.name;
+            boidInputs[i].value = person.boid;
+        })
+    }
 
-        //define constants here
-        const serverURL = "";
-        //get all the boids and names
-        const nameInputs = [...$('.name-input')];
-        const boidInputs = [...$('.boid-input')];
-        const resultScreens = [...document.getElementsByClassName('result-screen')];
-        // console.log(resultScreens);
-        if (localStorage.getItem("personsArray")) {
+    //onchange of any set result screen to unavailable
+    $('input').change(function () {
+        // resultScreens.style['background-color'] = "#ee71b5"
 
-            // console.log(JSON.parse(localStorage.getItem("personsArray")));
-            const savedPersonsArray = JSON.parse(localStorage.getItem("personsArray"))
-            savedPersonsArray.forEach((person, i) => {
-                nameInputs[i].value = person.name;
-                boidInputs[i].value = person.boid;
-            })
-        }
+        resultScreens.forEach((e) => {
+            e.style['background-color'] = "#ee71b5";
+            e.innerHTML = "Unavailable";
+        })
+    })
 
-        //onchange of any set result screen to unavailable
-        $('input').change(function () {
-            // resultScreens.style['background-color'] = "#ee71b5"
-
-            resultScreens.forEach((e) => {
-                e.style['background-color'] = "#ee71b5";
-                e.innerHTML = "Unavailable";
+    //for calling the api here
+    const seeResults = async () => {
+        const personsArray = [];
+        nameInputs.forEach((person, i) => {
+            // console.log(person.value);
+            // console.log(i)
+            personsArray.push({
+                name: nameInputs[i].value,
+                boid: boidInputs[i].value
             })
         })
 
-        //for calling the api here
-        const seeResults = async () => {
-            const personsArray = [];
-            nameInputs.forEach((person, i) => {
-                // console.log(person.value);
-                // console.log(i)
-                personsArray.push({
-                    name: nameInputs[i].value,
-                    boid: boidInputs[i].value
-                })
-            })
+        localStorage.setItem("personsArray", JSON.stringify(personsArray));
 
-            localStorage.setItem("personsArray", JSON.stringify(personsArray));
-
-            data = {
-            }
-
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-
-            var raw = JSON.stringify({ "boids": boidInputs.map(input => input.value).filter(val => val != '') });
-            // console.log(raw)
-
-            var requestOptions = {
-                method: 'POST',
-                headers: myHeaders,
-                body: raw,
-                redirect: 'follow'
-            };
-
-            $('#see-results-button').html("Loading...");
-            await fetch("/api/ipo-results", requestOptions)
-                .then(response => response.json())
-                .then(result => {
-                    $('#company-name').html(result["company_name"]);
-
-                    // console.log(result)
-                    result["results"].forEach((yesno, i) => {
-                        // console.log(resultScreens[i]);
-                        if (yesno) {
-                            resultScreens[i].innerHTML = " Paryo !";
-                            resultScreens[i].style['background-color'] = "#586ae5";
-                        }
-                        else {
-                            resultScreens[i].innerHTML = "Parena";
-                        }
-                    })
-                })
-                .catch(error => {
-                    console.log('error', error)
-                    window.location.href = "/error-page"
-                })
-                .then((r) => {
-                    $('#see-results-button').html("See Results");
-                });
-
+        data = {
         }
 
-    </script>
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
 
-</body>
+        var raw = JSON.stringify({ "boids": boidInputs.map(input => input.value).filter(val => val != '') });
+        // console.log(raw)
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        $('#see-results-button').html("Loading...");
+        await fetch("/api/ipo-results", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                $('#company-name').html(result["company_name"]);
+
+                // console.log(result)
+                result["results"].forEach((yesno, i) => {
+                    // console.log(resultScreens[i]);
+                    if (yesno) {
+                        resultScreens[i].innerHTML = " Paryo !";
+                        resultScreens[i].style['background-color'] = "#586ae5";
+                    }
+                    else {
+                        resultScreens[i].innerHTML = "Parena";
+                    }
+                })
+            })
+            .catch(error => {
+                console.log('error', error)
+                window.location.href = "/error-page"
+            })
+            .then((r) => {
+                $('#see-results-button').html("See Results");
+            });
+
+    }
+
+</script>
+
 
 </html>

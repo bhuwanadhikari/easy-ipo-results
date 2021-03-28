@@ -1,26 +1,28 @@
 import flask
-from flask import Flask, request, send_from_directory, jsonify, current_app
+from flask import Flask, request, send_from_directory, jsonify, current_app, render_template
 import requests
 import json
 
 
-app = flask.Flask(__name__)
+app= Flask(__name__, static_folder="templates")
 
 
-@app.route("/", methods=["GET"])
+
+
+@app.route("/")
 def home():
-    return current_app.send_static_file("index.html")
+    return render_template("/index.html")
 
 
-@app.route("/privacy", methods=["GET"])
+@app.route("/privacy")
 def privacy():
-    return current_app.send_static_file("privacy.html")
+    return render_template("privacy.html")
 
 
 
-@app.route("/error-page", methods=["GET"])
+@app.route("/error-page")
 def error_page():
-    return current_app.send_static_file("error.html")
+    return render_template("/error.html")
 
 
 @app.route("/api/ipo-results", methods=["POST"])
@@ -48,6 +50,3 @@ def get_ipo_results():
         results.append(json.loads(response.text)["success"])
         print(json.loads(response.text)["success"])
     return jsonify({"company_name": company["name"], "results": results})
-
-
-app.run()
