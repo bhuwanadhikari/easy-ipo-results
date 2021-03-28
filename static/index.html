@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>IPO Results</title>
+</head>
+
+<style>
+    .main-card {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .result-screen {
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    .href-wrapper {
+        text-align: center;
+    }
+
+    .href-external {
+        font-size: 0.8em;
+        color: blue;
+        text-align: center;
+    }
+
+    #see-results-button {
+        font-weight: bold !important;
+    }
+</style>
+
+<body>
+
+    <div class="min-h-screen min-w-screen flex items-center justify-center bg-yellow-100">
+        <div class="flex flex-col shadow-xl main-card">
+            <div
+                class="py-6 px-14 bg-gradient-to-tr from-pink-500 to-pink-300 rounded-tl-2xl rounded-tr-2xl text-center space-y-4">
+                <h4 class=" app-heading text-white text-center font-bold text-xl">
+                    IPO Results of Your Family
+                </h4>
+
+            </div>
+            <div class="flex flex-col py-6 px-8 space-y-5 bg-white">
+                <div class="max-w-md mx-auto">
+                    <h5 id="company-name" class=" text-gray text-center font-bold text-md">
+                    </h5>
+                    <div class="divide-y divide-gray-200">
+                        <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+
+
+
+                            <!-- First person of your family -->
+                            <div class="flex items-center space-x-4">
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" name-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" boid-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="BOID/DMAT">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <div
+                                            class="result-screen pr-4 pl-4 py-2 border  bg-pink-400 text-white rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent ">
+                                            Unavailable
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <!-- Second person of your family -->
+                            <div class="flex items-center space-x-4">
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" name-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" boid-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="BOID/DMAT">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <div
+                                            class="result-screen pr-4 pl-4 py-2 border  bg-pink-400 text-white rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent ">
+                                            Unavailable
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Third person of your family -->
+                            <div class="flex items-center space-x-4">
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" name-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" boid-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="BOID/DMAT">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <div
+                                            class="result-screen pr-4 pl-4 py-2 border  bg-pink-400 text-white rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent ">
+                                            Unavailable
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Third person of your family -->
+                            <div class="flex items-center space-x-4">
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" name-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" boid-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="BOID/DMAT">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <div
+                                            class="result-screen pr-4 pl-4 py-2 border  bg-pink-400 text-white rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent ">
+                                            Unavailable
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Fourth person of your family -->
+                            <div class="flex items-center space-x-4">
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" name-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" boid-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="BOID/DMAT">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <div
+                                            class="result-screen pr-4 pl-4 py-2 border  bg-pink-400 text-white rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent ">
+                                            Unavailable
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Fifth person of your family -->
+                            <div class="flex items-center space-x-4">
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" name-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" boid-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="BOID/DMAT">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <div
+                                            class="result-screen pr-4 pl-4 py-2 border  bg-pink-400 text-white rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent ">
+                                            Unavailable
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Sixth person of your family -->
+                            <div class="flex items-center space-x-4">
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" name-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" boid-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="BOID/DMAT">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <div
+                                            class="result-screen pr-4 pl-4 py-2 border  bg-pink-400 text-white rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent ">
+                                            Unavailable
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Seventh person of your family -->
+                            <div class="flex items-center space-x-4">
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" name-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <input type="text"
+                                            class=" boid-input px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                                            placeholder="BOID/DMAT">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="relative focus-within:text-gray-600 text-gray-400">
+                                        <div
+                                            class="result-screen pr-4 pl-4 py-2 border  bg-pink-400 text-white rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent ">
+                                            Unavailable
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <button id="see-results-button" onclick="seeResults()"
+                            class="w-full py-3 bg-pink-400 text-white rounded-md text-sm focus:outline-none  shadow-lg">See
+                            Results
+                        </button>
+                    </div>
+                    <br>
+                    <div class="href-wrapper">
+                        <a class="href-external" href="/privacy">Privacy and Terms and Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+        //define constants here
+        const serverURL = "";
+        //get all the boids and names
+        const nameInputs = [...$('.name-input')];
+        const boidInputs = [...$('.boid-input')];
+        const resultScreens = [...document.getElementsByClassName('result-screen')];
+        // console.log(resultScreens);
+        if (localStorage.getItem("personsArray")) {
+
+            // console.log(JSON.parse(localStorage.getItem("personsArray")));
+            const savedPersonsArray = JSON.parse(localStorage.getItem("personsArray"))
+            savedPersonsArray.forEach((person, i) => {
+                nameInputs[i].value = person.name;
+                boidInputs[i].value = person.boid;
+            })
+        }
+
+        //onchange of any set result screen to unavailable
+        $('input').change(function () {
+            // resultScreens.style['background-color'] = "#ee71b5"
+
+            resultScreens.forEach((e) => {
+                e.style['background-color'] = "#ee71b5";
+                e.innerHTML = "Unavailable";
+            })
+        })
+
+        //for calling the api here
+        const seeResults = async () => {
+            const personsArray = [];
+            nameInputs.forEach((person, i) => {
+                // console.log(person.value);
+                // console.log(i)
+                personsArray.push({
+                    name: nameInputs[i].value,
+                    boid: boidInputs[i].value
+                })
+            })
+
+            localStorage.setItem("personsArray", JSON.stringify(personsArray));
+
+            data = {
+            }
+
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({ "boids": boidInputs.map(input => input.value).filter(val => val != '') });
+            // console.log(raw)
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            $('#see-results-button').html("Loading...");
+            await fetch("/api/ipo-results", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    $('#company-name').html(result["company_name"]);
+
+                    // console.log(result)
+                    result["results"].forEach((yesno, i) => {
+                        // console.log(resultScreens[i]);
+                        if (yesno) {
+                            resultScreens[i].innerHTML = " Paryo !";
+                            resultScreens[i].style['background-color'] = "#586ae5";
+                        }
+                        else {
+                            resultScreens[i].innerHTML = "Parena";
+                        }
+                    })
+                })
+                .catch(error => {
+                    console.log('error', error)
+                    window.location.href = "/error-page"
+                })
+                .then((r) => {
+                    $('#see-results-button').html("See Results");
+                });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
